@@ -60,8 +60,8 @@ with st.sidebar:
         min_value=62.0,
         max_value=69.0,
         value=65.0,
-        step=0.01,
-        format="%.2f" # Changed format from "%2f" to "%.3f"
+        step=0.001,
+        format="%.2f" 
     )
     st.caption("El procentaje de hierro es crucial para el proceso.")
 
