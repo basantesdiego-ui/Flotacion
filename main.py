@@ -71,7 +71,7 @@ st.markdown("""
 ¡Bienvenido! Esta aplicación utiliza un modelo de machine learning para predecir el porcentaje de concentracion de Silica en un proceso de flotación basándose en parámetros operativos clave.
 
 **Esta herramienta puede ayudar a los ingenieros de procesos y operadores a:**
-- **Optimizar** las condiciones de operación para obtener el porcen5taje de silica adecuado.
+- **Optimizar** las condiciones de operación para obtener el porcentaje de silica adecuado.
 - **Predecir** el impacto de los cambios en el proceso antes de implementarlos.
 - **Solucionar** problemas potenciales simulando diferentes escenarios.
 """)
@@ -80,7 +80,7 @@ st.markdown("""
 # Solo intentamos predecir si el modelo se ha cargado correctamente.
 if model is not None:
     # El botón principal que el usuario presionará para obtener un resultado.
-    if st.button('🚀 Predecir Concetración', type="primary"):
+    if st.button('🚀 Predecir Porcentaje de silica', type="primary"):
         # Creamos un DataFrame de pandas con las entradas del usuario.
         # ¡Es crucial que los nombres de las columnas coincidan exactamente con los que el modelo espera!
         df_input = pd.DataFrame({
