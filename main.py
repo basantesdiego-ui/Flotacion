@@ -6,7 +6,7 @@ import pandas as pd
 # --- Configuración de la Página ---
 # Esto debe ser lo primero que se ejecute en el script.
 st.set_page_config(
-    page_title="Predictor de Porcentaje de Silica",
+    page_title="Predictor de Porcentaje de Silice",
     page_icon="🧪",
     layout="wide"
 )
@@ -31,7 +31,7 @@ model = load_model('model.joblib')
 with st.sidebar:
     st.header("⚙️ Parámetros de Entrada")
     st.markdown("""
-    Ajusta los deslizadores para que coincidan con los parámetros operativos delo proceso de Flotacion.
+    Ajusta los deslizadores para que coincidan con los parámetros operativos del proceso de Flotacion.
     """)
 
     # Slider para el flujo de amina
@@ -61,14 +61,14 @@ with st.sidebar:
         max_value=69.0,
         value=65.0,
         step=0.001,
-        format="%.2f" 
+        format="%.2f"
     )
     st.caption("El procentaje de hierro es crucial para el proceso.")
 
 # --- Contenido de la Página Principal ---
-st.title("🧪 Predictor de Porcentaje de Silica")
+st.title("🧪 Predictor de Porcentaje de Silice")
 st.markdown("""
-¡Bienvenido! Esta aplicación utiliza un modelo de machine learning para predecir el porcentaje de concentracion de Silica en un proceso de flotación basándose en parámetros operativos clave.
+¡Bienvenido! Esta aplicación utiliza un modelo de machine learning para predecir el porcentaje de concentración de Silice en un proceso de flotación basándose en parámetros operativos clave.
 
 **Esta herramienta puede ayudar a los ingenieros de procesos y operadores a:**
 - **Optimizar** las condiciones de operación para obtener el porcentaje de silica adecuado.
@@ -80,7 +80,7 @@ st.markdown("""
 # Solo intentamos predecir si el modelo se ha cargado correctamente.
 if model is not None:
     # El botón principal que el usuario presionará para obtener un resultado.
-    if st.button('🚀 Predecir Porcentaje de silica', type="primary"):
+    if st.button('🚀 Predecir Porcentaje de silice', type="primary"):
         # Creamos un DataFrame de pandas con las entradas del usuario.
         # ¡Es crucial que los nombres de las columnas coincidan exactamente con los que el modelo espera!
         df_input = pd.DataFrame({
@@ -95,7 +95,7 @@ if model is not None:
             st.subheader("📈 Resultado de la Predicción")
             # Mostramos el resultado en un cuadro de éxito, formateado a dos decimales.
             st.success(f"**Porcentaje Predicho:** `{prediction_value[0]:.2f}%`")
-            st.info("Este valor representa el porcentaje de silica presente en la opreación.")
+            st.info("Este valor representa el porcentaje de silice presente en la operación.")
         except Exception as e:
             st.error(f"Ocurrió un error durante la predicción: {e}")
 else:
